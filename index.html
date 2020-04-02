@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Western Paper Installs Tracker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="This is what search sees">
+    <link rel="icon" href="WesternPaperInstalls.ico" >
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type ='text/css'>
+    <link rel="stylesheet" href="stylesheet.css" >
+</head>
+    
+<body>
+<script src='IO.js'></script>
+    
+<div id="container">
+    <div id="frontImage">
+        <img src = "WesternPaperInstalls.ico">
+    </div>
+    <h2>Install Request Form</h2>
+    <div id='instructionsSection'>
+        <button id='instructionButton' onclick='toggleInstructions(instructionButton)'>Instructions:</button>
+        <div id='instructionToggle'>
+            <p class='instructions'>This interface will help keep track of the install orders awaiting completion.</p>
+            <p class='instructions'>On the left side, enter the information pertaining to the order. The data entered will appear formated on the right side.</p>
+            <p class='instructions'>Select and copy the formated data on the right side. Paste it into a notepad or text editor. If the text appears misformated, remove all styles in your text editor. Simple notepads work better than word processors.</p>
+            <p class='instructions'>Save and/or print the text file for your reference. Copy/Paste the content into the appropriate fields. Please refer to the <a href="https://drive.google.com/file/d/1CLmsCZgtRDQZ_oeTc995xV2PfMW3mbBY/view?usp=sharing">Standard Opperation Procedure Manual</a> for more information.</p>
+        </div>
+    </div>
+    <hr>
+   
+    <div id='locationInormation'>
+            <h2>Location Information</h2>
+            <label> Name:</label>
+            <input type='text' id='ipName' oninput='opName()'><br>
+            <span></span>
+            <label>Adress:</label>
+            <input type='text' id='ipAddress1' oninput='opAddress1()'><br>
+            <span></span>
+            <label>City:</label>
+            <input type='text' id='ipCity' oninput='opCity()'><br>
+            <span></span>
+            <label>State:</label>
+            <select id='ipState' onchange="opState()">
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select>	
+            <span></span>
+            <label>Zip:</label>
+            <input type='text' id='ipZip' oninput='opZip()'><br>
+            <span></span>
+            <hr>
+    </div>
+    <div>
+        <h2>Reference Numbers</h2>
+        <label>Order Number:</label>
+        <input type='text' id='ipOrderNumber' oninput='opOrderNumber()'><br>
+        <label>Customer ID:</label>
+        <input type='text' id='ipCustomerID' oninput='opCustomerID()'><br>
+        <label>Ship To ID:</label>
+        <input type='text' id='ipShipToID' oninput='opShipToID()'><br>
+        <hr>
+    </div>
+    
+    
+    <div>
+
+        <div id='orderDate'>
+        <label>Order Date:</label>
+        <input type='date' id='ipOrderDate' oninput='opOrderDate()'>
+        </div>
+        <label> Installation Type:</label>
+        <select id='ipInstallType' onchange='opInstallType()'>
+            <option>Dispensers</option>
+            <option>Laundry</option>
+        </select>
+        <span></span>
+        <h2>Contact Information</h2>
+        <label>Sales Rep:</label>
+        <input type='text' id='ipSalesRepName' oninput='opSalesRepName()'><br>
+        <span></span>
+        <label>Sales Rep Phone Number:</label>
+        <input type='text' id='ipSalesRepPhone' oninput='opSalesRepPhone()'><br>
+        <span></span>
+        <hr>
+        <label>Customer Contact Name:</label>
+        <input type='text' id='ipContactName' oninput='opContactName()'><br>
+        <span></span>
+        <label>Customer Contact Phone Number:</label>
+        <input type='text' id='ipContactPhone' oninput='opContactPhone()'><br>
+        <span></span>
+        <label>Customer Contact Email:</label>
+        <input type='text' id='ipContactEmail' oninput='opContactEmail()'><br>
+        <span></span>
+        <hr>
+    </div>
+        
+        <label>Escort Necessary?</label>
+        <select id='escortNeeded' onchange="escortInfoToggle()">
+            <option>--select yes or no--</option>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+        <span></span>
+        <div id='escortInfo'>
+            <label>Escort Contact Name:</label>
+            <input type='text' id='ipEscortName' oninput='opEscortName()'><br>
+            <span></span>
+            <label>Escort Contact Phone Number:</label>
+            <input type='text' id='ipEscortPhone' oninput='opEscortPhone()'><br>
+            <span></span>
+            <label>Escort Contact Email:</label>
+            <input type='text' id='ipEscortEmail' oninput='opEscortEmail()'><br>
+            <span></span>
+        </div>
+        <br>
+        <hr>
+        
+        <label>Mounting Surface:</label><br>
+        <select id='ipMountingSurface' onchange='opMountingSurface()'>
+            <option>--select option--</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select><br>
+        <span></span>
+        
+        <label>Do you need collars or panels?</label><br>
+        <select id="needCollarsOrPanels" onchange="collarsOrPanelsNeeded()">
+            <option>--select yes or no--</option>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+    
+        
+        <select id="selectCollarsPanels" onchange="collarsPanelsSelect()">
+            <option value="">Select what you need</option>
+            <option value="collars">Collars</option>
+            <option value="panels">Panels</option>
+            <option value="Both">Both</option>
+        </select>
+            <div id="collarPanelSubmenu">
+                <div id="howManyCollars">
+                    <label>How many collars?</label>
+                    <input id="howManyCollarsInput" type='number' value='0' min='0' oninput='howManyCollarsPanels()'>
+                </div>
+                <div id="howManyPanels">
+                    <label>How many panels?</label>
+                    <input id="howManyPanelsInput" type='number' value='0' min='0'oninput='howManyCollarsPanels()'>
+                </div>
+                <div id="collarsPanelsOrderedYet">
+                    Have they been ordered yet?
+                    <div>
+                        <label for="collar_pannel_yes_no">Yes</label>
+                        <input type="radio" name="collar_pannel_yes_no" class='radioButton' value="yes" id="collarsPanelsOrderedYetYes" onchange="collarPanelOrderedYet()">
+                    </div>
+                    <div>
+                        <label for="collar_pannel_yes_no">No</label>
+                        <input type="radio" name="collar_pannel_yes_no" class='radioButton' value="no" id="collarsPanelsOrderedYetNo"
+                        onchange="collarPanelOrderedYet()">
+                    </div>
+                </div>
+            <hr>
+            </div>
+    
+    <div id='commentsAdditionalInfo'>
+        <label for="commentsInputField">Comments and Additional Info:</label>
+        <textarea id='ipComments' rows='10' cols='65' oninput='opComments()'></textarea>
+        <hr>
+    </div>
+    
+    <div id='howManyDispensers'>
+        <h2>How Many Dispensers to Install</h2>
+            <label>Soap/Sanitizer:</label><br>
+            <input type='number' value='0' min='0'id='soapSanitizer' oninput='opSoap()'><br>
+            <label>Counter-top Soap:</label><br>
+            <input type='number' value='0' min='0' id='counterTopSoap' oninput='opCounterTop()'><br>
+            <label>Paper Towel:</label><br>
+            <input type='number' value='0' min='0' id='paperTowel' oninput='opPaperTowel()'><br>
+            <label>Recessed HRT:</label><br>
+            <input type='number' value='0' min='0' id='recessedPaperTowel' oninput='opRecessed()'><br>
+            <label>Toilet Paper:</label><br>
+            <input type='number' value='0' min='0' id='toiletPaper' oninput='opTP()'><br>
+            <label>Toilet Seat Cover:</label><br>
+            <input type='number' value='0' min='0' id='toiletSeatCover' oninput='opToiletSeat()'><br>
+            <label>Chemical Dilution:</label><br>
+            <input type='number' value='0' min='0' id='chemicalDilution' oninput='opChemical()'><br>
+            <label>Air Fresheners:</label><br>
+            <input type='number' value='0' min='0' id='airFreshener' oninput='opAirFresh()'><br>
+            <label>Other:</label><br>
+            <input type='number' value='0' min='0' id='other' oninput='opOther()'><br>
+            <br>
+            <p id='totalDispensers'></p>
+            
+        <hr>
+    </div>
+    
+    <div id="isInstallScheduled">
+        <p>Is this install order scheduled yet?</p>
+        <div>
+        <label for="yes_no">Yes</label>
+        <input type="radio" name="yes_no" class='radioButton' value="yes" id="isInstallScheduledYes" onclick="yesInstallScheduled()">
+        </div>
+        <div>
+        <label for="yes_no">No</label>
+        <input type="radio" name="yes_no" class='radioButton' value="no" id="isInstallScheduledNo" onclick="noInstallScheduled()">
+        </div>
+         <div id="dateInstallScheduled">
+            <label>Date Scheduled:</label>
+            <input type='date' id='ipScheduleDate' oninput="opScheduledDate()">
+        </div>
+    </div>
+    <br>
+</div>
+
+<div id='output'>
+    <h2>Install Request Form</h2>
+    <p id='opName'>Name</p>
+    <div id='opAddress'>
+        <ul>
+            <li id='opAddress1'>address</li>
+            <li id='opCity'>city</li>
+            <li id='opState'>state</li>
+            <li id='opZip'>zip</li>
+        </ul>
+    </div>
+    
+    <div> 
+        <h3>Reference:</h3>
+        <ul class='referenceNumbers'>
+            <li>Order Number:</li>
+            <li id='opOrderNumber'></li>
+        </ul>
+        <ul class='referenceNumbers'>
+            <li>Customer ID:</li>
+            <li id='opCustomerID'></li>
+        </ul>
+        <ul class='referenceNumbers'>
+            <li>Ship To ID:</li>
+            <li id='opShipToID'></li>
+        </ul>
+        <ul id='opOrderDateLabel'>
+            <li>Order Date:</li>
+            <li id='opOrderDate'></li>
+        </ul>
+        <ul>
+            <li>Installation Type: </li>
+            <li id='opInstallType'>Dispensers</li>
+        </ul>
+        
+        <hr>
+        <h3>Contact Information:</h3>
+        <ul>
+            <li>Sales Rep Name: </li>
+            <li id='opSalesRepName'></li>
+        </ul>
+        <ul>
+            <li>Sales Rep Phone Number: </li>
+            <li id='opSalesRepPhone'></li>
+        </ul>
+        <hr>
+        <ul>
+            <li>Customer Contact Name: </li>
+            <li id='opContactName'></li>
+        </ul>
+        <ul>
+            <li>Customer Contact Phone: </li>
+            <li id='opContactPhone'></li>
+        </ul>
+        <ul>
+            <li>Customer Contact Email: </li>
+            <li id='opContactEmail'></li>
+        </ul>
+        <hr>
+        <p id='opEscortNeccessary'>Escort Necessary?</p>
+        <div id='escortSection'>
+            <ul>
+                <li>Escort Contact Name: </li>
+                <li id='opEscortName'></li>
+            </ul>
+            <ul>
+                <li>Escort Contact Phone Number: </li>
+                <li id='opEscortPhone'></li>
+            </ul>
+            <ul>
+                <li>Escort Contact Email: </li>
+                <li id='opEscortEmail'></li>
+            </ul>
+        </div>
+        <hr>
+        <h3>Install Information</h3>
+        <p id='opMountingSurface'>Mounting Surface:</p>
+        <hr>
+        
+        <p id= 'opAreCollarsPanelsNeeded'>Are Collars or Panels Needed?</p>
+        <div id='opCollarsPannelsSection'>
+          <div id=opYesCollarsPanels>
+              <ul id='opCollars'>
+                <li id='opCollarsLabel'>Number of Collars: </li>
+                <li id='opCollarsNum'></li>
+              </ul>
+              <ul id='opPanels'>
+                <li id='opPanelsLabel'>Number of Panels: </li>
+                <li id='opPanelsNum'></li>
+              </ul>
+    
+                <p id='opOrdered'>Have they been ordered yet?</p>
+            </div>
+        </div>
+        <hr>
+        <p>Comment and Additional Info:</p>
+        <p id='opComments'> </p>
+        <hr>
+     
+        <div id='opHowManyDispensers'>
+          <p>Total of each dispenser:</p>
+            <p id='opSoapSanitizer'></p>
+            <p id='opCounterTopSoap'></p>
+            <p id='opPaperTowel'></p>
+            <p id='opRecessedPaperTowel'></p>
+            <p id='opToiletPaper'></p>
+            <p id='opToiletSeatCover'></p>
+            <p id='opChemicalDilution'></p>
+            <p id='opAirFreshener'></p>
+            <p id='opOther'></p>
+            <ul>
+                <li>Total Dispensers: </li>
+                <li id='opTotalDispensers'></li>
+            </ul>
+            <hr>
+        </div>
+        <h3>Date Scheduled:</h3>
+        <div id='scheduledFor'>
+            <p id='opScheduled'>No schedule date selected yet.</p>
+            <p id='opScheduledDate'></p>
+        </div>
+    </div>
+    
+</div>
+    
+<script src="javascript.js"></script>
+</body>
+</html>
+
